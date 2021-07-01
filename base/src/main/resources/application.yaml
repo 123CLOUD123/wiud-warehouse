@@ -1,2 +1,12 @@
 server:
   port: 8020
+  
+# oauth2 config
+security:
+  oauth2:
+    client:
+      client-id: base-app
+      client-secret: base-app
+    resource:
+      token-info-uri: http://localhost:8021/oauth/check_token
+      user-info-uri: http://localhost:8021/user/current 
