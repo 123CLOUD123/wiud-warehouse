@@ -11,5 +11,16 @@ security:
       token-info-uri: http://localhost:8021/oauth/check_token
       user-info-uri: http://localhost:8021/user/current 
 
+#spring:
+#  main:#    allow-bean-definition-overriding: true
+    
+# eureka client config
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8022/eureka  ## 注册到 eureka 
 spring:
-  main:    allow-bean-definition-overriding: true
+  application:
+    name: auth-server  ## 应用程序名称，后面会在消费者中用到

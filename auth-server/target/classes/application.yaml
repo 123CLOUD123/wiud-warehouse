@@ -1,2 +1,12 @@
 server:
   port: 8021
+  
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8022/eureka  ## 注册到 eureka 
+spring:
+  application:
+    name: auth-server  ## 应用程序名称，后面会在消费者中用到
