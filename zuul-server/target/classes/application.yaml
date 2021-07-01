@@ -5,8 +5,16 @@ eureka:
   instance:
     preferIpAddress: true
   client:
+    fetch-registry: true
+    register-with-eureka: true
     serviceUrl:
       defaultZone: http://localhost:8022/eureka  ## 注册到 eureka 
 spring:
   application:
     name: zuul-server  
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
