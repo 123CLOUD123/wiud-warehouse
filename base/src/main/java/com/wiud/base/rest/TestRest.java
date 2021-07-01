@@ -13,4 +13,9 @@ public class TestRest {
 		return "hello base123";
 	}
 	
+	@GetMapping("/test2")
+	public String test2() {
+		return "hello test22222222";
+	}
+	
 }
