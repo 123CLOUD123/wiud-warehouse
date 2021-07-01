@@ -16,26 +16,6 @@ import org.springframework.security.oauth2.provider.token.store.InMemoryTokenSto
 @EnableAuthorizationServer
 public class AuthServerConfiguration extends AuthorizationServerConfigurerAdapter {
 
-//    @Autowired
-//    private UserServiceImpl userService;
-
-//    @Autowired
-//    private ClientServiceImpl clientService;
-//
-//    @Autowired
-//    private GsUserAuthenticationConverter gsUserAuthenticationConverter;
-    
-//    @Autowired
-//    private GsAccessTokenConverter gsAccessTokenConverter;
-
-//    @Bean
-//    public NoOpPasswordEncoder passwordEncoder() {
-//        return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
-//    }
-
-    /**
-     * token 存储方式
-     */
     @Bean
     public TokenStore tokenStore() {
         return new InMemoryTokenStore();
@@ -45,22 +25,20 @@ public class AuthServerConfiguration extends AuthorizationServerConfigurerAdapte
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         endpoints.tokenStore(tokenStore())
         		.allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST);
-//        		.accessTokenConverter(gsAccessTokenConverter); // 密码模式需配置AuthenticationManager/UserDetailsService;
     }
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-        security.allowFormAuthenticationForClients() // 让/oauth/token 支持client_id以及client_secret作登录认证
+        security.allowFormAuthenticationForClients()
                 .tokenKeyAccess("permitAll()")
                 .checkTokenAccess("permitAll()");
     }
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-//        clients.withClientDetails(clientService);
     	clients.inMemory()
-    		.withClient("client_id")
-    		.secret("client_secret");
+    		.withClient("app-base")
+    		.secret("app-base");
     }
 
 }

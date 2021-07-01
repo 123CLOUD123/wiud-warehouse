@@ -2,6 +2,7 @@ package com.wiud.base.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.ResourceServerProperties;
+import org.springframework.boot.autoconfigure.security.oauth2.resource.UserInfoTokenServices;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -23,9 +24,6 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     @Autowired
     private ResourceServerProperties resourceServerProperties;
     
-//    @Autowired
-//    private GsUserAuthConverter gsUserAuthConverter;
-    
     @Bean
     public TokenStore tokenStore() {
         return new InMemoryTokenStore();
@@ -34,7 +32,6 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     @Bean
     public AccessTokenConverter accessTokenConverter() {
         DefaultAccessTokenConverter accessTokenConverter = new DefaultAccessTokenConverter();
-//        accessTokenConverter.setUserTokenConverter(gsUserAuthConverter);
         return accessTokenConverter;
     }
     
@@ -48,11 +45,11 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
         return remoteTokenServices;
     }
     
-//    @Bean
-//    public UserInfoTokenServices userInfoTokenServices() {
-//        UserInfoTokenServices userInfoTokenServices = new UserInfoTokenServices(resourceServerProperties.getUserInfoUri(), resourceServerProperties.getClientId());
-//        return userInfoTokenServices;
-//    }
+    @Bean
+    public UserInfoTokenServices userInfoTokenServices() {
+        UserInfoTokenServices userInfoTokenServices = new UserInfoTokenServices(resourceServerProperties.getUserInfoUri(), resourceServerProperties.getClientId());
+        return userInfoTokenServices;
+    }
     
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) {
