@@ -10,7 +10,7 @@ public class TestRest {
 
 	@GetMapping("/test")
 	public String test() {
-		return "hello base";
+		return "hello base123";
 	}
 	
 }
