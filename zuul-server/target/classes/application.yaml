@@ -1,0 +1,12 @@
+server:
+  port: 8023
+  
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8022/eureka  ## 注册到 eureka 
+spring:
+  application:
+    name: zuul-server  

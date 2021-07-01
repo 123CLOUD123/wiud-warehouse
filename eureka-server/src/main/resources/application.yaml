@@ -13,25 +13,5 @@ eureka:  instance:
     fetch-registry: false 
     service-url:      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
   server:
-    enable-self-preservation: true
-    renewal-percent-threshold: 0.5
-  
-  
-  
-  
-##  #服务名称
-##spring.application.name=eureka-server
-###服务地址
-##eureka.instance.hostname=localhost
-##
-###不向注册中心注册自己
-##eureka.client.register-with-eureka=false
-###取消检索服务
-##eureka.client.fetch-registry=false
-###开启注册中心的保护机制，默认是开启
-##eureka.server.enable-self-preservation=true
-###设置保护机制的阈值，默认是0.85。
-##eureka.server.renewal-percent-threshold=0.5
-#
-##注册中心路径，如果有多个eureka server，在这里需要配置其他eureka server的地址，用","进行区分，如"http://address:8888/eureka,http://address:8887/eureka"
-#eureka.client.service-url.default-zone=http://${eureka.instance.hostname}:${server.port}/eureka    
+    enable-self-preservation: false
+    renewal-percent-threshold: 0.8    
