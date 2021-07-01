@@ -10,3 +10,6 @@ security:
     resource:
       token-info-uri: http://localhost:8021/oauth/check_token
       user-info-uri: http://localhost:8021/user/current 
+
+spring:
+  main:    allow-bean-definition-overriding: true
