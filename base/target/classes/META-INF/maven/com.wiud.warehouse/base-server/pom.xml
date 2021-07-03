@@ -12,7 +12,7 @@
   <groupId>com.wiud.warehouse</groupId>
   <artifactId>base-server</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>base</name>
+  <name>base-server</name>
   <url>http://maven.apache.org</url>
   
   <properties>
