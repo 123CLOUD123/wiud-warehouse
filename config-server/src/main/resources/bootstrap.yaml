@@ -3,7 +3,7 @@ spring:
      config:
         server:
           git:
-            uri: https://github.com/123CLOUD123/WiudWarehouse #配置文件所在仓库
+            uri: https://github.com/123CLOUD123/WiudWarehouse.git #配置文件所在仓库
             username: 102196124@qq.com
             password: CLOUDzax123
             default-label: master #配置文件分支
