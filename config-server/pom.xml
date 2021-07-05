@@ -7,9 +7,9 @@
     <artifactId>wiud-warehouse</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com.wiud.eureka</groupId>
-  <artifactId>eureka-server</artifactId>
-  <name>eureka-server</name>
+  <groupId>com.wiud.config</groupId>
+  <artifactId>config-server</artifactId>
+  <name>config-server</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -23,17 +23,22 @@
     </dependency>
     
     <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-    </dependency>
-    <dependency> 
-	  <groupId>org.springframework.boot</groupId>  
-	  <artifactId>spring-boot-starter-actuator</artifactId> 
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-web</artifactId>
 	</dependency>
-    
-    <dependency>
-    	<groupId>javax.xml.bind</groupId>
-	  	<artifactId>jaxb-api</artifactId>
+
+	<dependency>
+	    <groupId>org.springframework.cloud</groupId>
+	    <artifactId>spring-cloud-config-server</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework.cloud</groupId>
+	    <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+	</dependency>
+	
+	<dependency>
+		<groupId>javax.xml.bind</groupId>
+		<artifactId>jaxb-api</artifactId>
 	</dependency>
 	<dependency>
 		<groupId>com.sun.xml.bind</groupId>
@@ -46,7 +51,7 @@
 	<dependency>
 		<groupId>javax.activation</groupId>
 		<artifactId>activation</artifactId>
-	</dependency>	
+	</dependency>
   </dependencies>
   
 </project>

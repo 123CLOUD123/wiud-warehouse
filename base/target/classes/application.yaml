@@ -23,4 +23,13 @@ eureka:
       defaultZone: http://localhost:8022/eureka  ## 注册到 eureka 
 spring:
   application:
-    name: base-server  ## 应用程序名称，后面会在消费者中用到
+    name: base-server  
+  profiles: local
+  cloud:
+    config:
+      name: config-local
+      uri: http://localhost:8024
+      label: master
+      profile: local
+      discovery:        enabled: true
+        service-id: config-server
