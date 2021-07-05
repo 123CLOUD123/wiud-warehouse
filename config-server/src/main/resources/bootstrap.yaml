@@ -1,0 +1,18 @@
+spring:
+  cloud:
+     config:
+        server:
+          git:
+            uri: https://github.com/123CLOUD123/WiudWarehouse #配置文件所在仓库
+            username: 102196124@qq.com
+            password: CLOUDzax123
+            default-label: master #配置文件分支
+            search-paths: /tools/config-repository  #配置文件所在根目录
+            
+# eureka client config
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8022/eureka  ## 注册到 eureka 

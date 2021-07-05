@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/base")
 public class TestRest {
 
-	@Value("${test}")
+	@Value("${test:123}")
 	private String test;
 	
 	@GetMapping("/test")

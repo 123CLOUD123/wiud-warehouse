@@ -1,35 +1,2 @@
 server:
   port: 8020
-  
-# oauth2 config
-security:
-  oauth2:
-    client:
-      client-id: base-app
-      client-secret: base-app
-    resource:
-      token-info-uri: http://localhost:8021/oauth/check_token
-      user-info-uri: http://localhost:8021/user/current 
-
-#spring:
-#  main:#    allow-bean-definition-overriding: true
-    
-# eureka client config
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8022/eureka  ## 注册到 eureka 
-spring:
-  application:
-    name: base-server  
-  profiles: local
-  cloud:
-    config:
-      name: config-local
-      uri: http://localhost:8024
-      label: master
-      profile: local
-      discovery:        enabled: true
-        service-id: config-server
