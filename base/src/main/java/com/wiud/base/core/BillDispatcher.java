@@ -43,6 +43,10 @@ public class BillDispatcher {
 		return getOrApply(new PurchaseRequestConfigurer());
 	}
 	
+	public void addFilter(BillFilter filter) {
+		billFilterChain.addFilter(filter);
+	}
+	
 	@SuppressWarnings("unchecked")
 	private <C extends AbstractBillConfigurer> C getOrApply(C configurer) {
 		C existingConfigurer = (C) configurers.get(configurer.getClass());
@@ -57,6 +61,5 @@ public class BillDispatcher {
 		configurers.put(configurer.getClass(), configurer);
 		return configurer;
 	}
-	
 	
 }

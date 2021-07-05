@@ -7,12 +7,12 @@ import com.wiud.base.core.BillDispatcher;
 public class PurchaseRequestConfigurer extends AbstractBillConfigurer {
 
 	@Override
-	public void init(BillDispatcher builder) {
-		builder.getFilterChain().addFilter(new PurchaseRequestFilter());
+	public void init(BillDispatcher dispatcher) {
+		dispatcher.addFilter(new PurchaseRequestFilter());
 	}
 
 	@Override
-	public void configure(BillDispatcher builder) {
+	public void configure(BillDispatcher dispatcher) {
 		
 	}
 
